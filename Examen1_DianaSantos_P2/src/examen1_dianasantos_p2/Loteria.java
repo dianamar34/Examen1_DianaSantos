@@ -1405,6 +1405,7 @@ public class Loteria extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         personas.remove(Integer.parseInt(tf_elim.getText()));
+        JOptionPane.showMessageDialog(this, "Se elimino exitosamente");
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void tabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabStateChanged
