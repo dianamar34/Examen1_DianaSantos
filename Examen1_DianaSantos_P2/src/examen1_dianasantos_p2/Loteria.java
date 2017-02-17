@@ -168,13 +168,17 @@ public class Loteria extends javax.swing.JFrame {
         mod_estudi = new javax.swing.JButton();
         tf_posicionempleado3 = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        jTabbedPane9 = new javax.swing.JTabbedPane();
         jTabbedPane8 = new javax.swing.JTabbedPane();
         jPanel12 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel59 = new javax.swing.JLabel();
         tf_elim = new javax.swing.JTextField();
         jTabbedPane4 = new javax.swing.JTabbedPane();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel60 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel61 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -1256,7 +1260,6 @@ public class Loteria extends javax.swing.JFrame {
         tab.addTab("Estudiantes", modestu);
 
         jTabbedPane3.addTab("Modificar", tab);
-        jTabbedPane3.addTab("Reportes", jTabbedPane9);
 
         jTabbedPane8.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -1306,6 +1309,64 @@ public class Loteria extends javax.swing.JFrame {
         jTabbedPane3.addTab("Eliminar", jTabbedPane8);
 
         jTabbedPane2.addTab("Administracion", jTabbedPane3);
+
+        jLabel60.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel60.setText("Venta de Boletos");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lps. 350", "Lps. 10", "000", "Lps. 100", "000", "Lps. 1", "000", "000" }));
+
+        jLabel61.setText("Seleccione a que premio desea participar:");
+
+        jButton2.setText("Seleccionar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(104, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(99, 99, 99))
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel61))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
+                .addComponent(jLabel61)
+                .addGap(54, 54, 54)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+
+        jTabbedPane4.addTab("Boletos", jPanel13);
+
         jTabbedPane2.addTab("Boleteria", jTabbedPane4);
         jTabbedPane2.addTab("Rifas", jTabbedPane5);
 
@@ -1334,63 +1395,95 @@ public class Loteria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreActionPerformed
+    private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
+
+    }//GEN-LAST:event_jTabbedPane3StateChanged
+
+    private void jTabbedPane8StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane8StateChanged
+
+    }//GEN-LAST:event_jTabbedPane8StateChanged
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        personas.remove(Integer.parseInt(tf_elim.getText()));
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void tabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabStateChanged
+
+    }//GEN-LAST:event_tabStateChanged
+
+    private void mod_estudiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_estudiMouseClicked
+        // modificar estudiantes
+
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdepto5.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfedad5.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfid5.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tf_nombre5.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(ftddinero5.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfidboleto5.getText());
+        ((Estudiantes) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setCarrera(tfcarrera1.getText());
+        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
+    }//GEN-LAST:event_mod_estudiMouseClicked
+
+    private void tfcarrera1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfcarrera1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombreActionPerformed
+    }//GEN-LAST:event_tfcarrera1ActionPerformed
 
-    private void tfnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfnomActionPerformed
+    private void tf_nombre5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfnomActionPerformed
+    }//GEN-LAST:event_tf_nombre5ActionPerformed
 
-    private void addclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addclienteMouseClicked
+    private void mod_politicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_politicoMouseClicked
+        // Modificar politicos
 
-        try {
-            personas.add(new Personas(nombre, edad, ID, IDBoleto, depto, dinero));
-            JOptionPane.showMessageDialog(this, "La persona se agrego exitosamente");
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdep1.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfed1.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfidd1.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tfnom1.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(tfdin1.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfboleto1.getText());
+        ((Politicos) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setPartido("");
+        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
+    }//GEN-LAST:event_mod_politicoMouseClicked
 
-            tf_nombre.setText("");
-            tfedad.setText("");
-            tfid.setText("");
-            tfidboleto.setText("");
-            ftddinero.setText("");
-            tfdepto.setText("");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos.");
-        }
-    }//GEN-LAST:event_addclienteMouseClicked
-
-    private void addpoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpoliActionPerformed
+    private void tfnom1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfnom1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addpoliActionPerformed
+    }//GEN-LAST:event_tfnom1ActionPerformed
 
-    private void tf_nombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre1ActionPerformed
+    private void mod_empleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_empleMouseClicked
+        // Tmodificar empleados
+
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdepto4.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfedad4.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfid4.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tf_nombre4.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(ftddinero4.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfidboleto4.getText());
+        ((Empleados) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setEmpleo(tfempleo.getText());
+        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
+    }//GEN-LAST:event_mod_empleMouseClicked
+
+    private void tf_nombre4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombre1ActionPerformed
+    }//GEN-LAST:event_tf_nombre4ActionPerformed
 
-    private void addcliente1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addcliente1MouseClicked
-        try {
-            personas.add(new Empleados(empleo, nombre, edad, ID, IDBoleto, depto, dinero));
-            JOptionPane.showMessageDialog(this, "La persona se agrego exitosamente");
+    private void mod_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_clientesMouseClicked
 
-            tf_nombre1.setText("");
-            tfedad1.setText("");
-            tfid1.setText("");
-            tfidboleto1.setText("");
-            ftddinero1.setText("");
-            tfdepto1.setText("");
-            tfempleo.setText("");
+        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setDepto(tfdepto3.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setEdad(Integer.parseInt(tfedad3.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setID(tfid3.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setNombre(tf_nombre3.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setDinero(Integer.parseInt(ftddinero3.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setIDBoleto(tfidboleto3.getText());
+        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
+    }//GEN-LAST:event_mod_clientesMouseClicked
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos.");
-        }
-    }//GEN-LAST:event_addcliente1MouseClicked
-
-    private void tf_nombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre2ActionPerformed
+    private void tf_nombre3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombre2ActionPerformed
+    }//GEN-LAST:event_tf_nombre3ActionPerformed
+
+    private void tfcarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfcarreraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfcarreraActionPerformed
 
     private void addcliente2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addcliente2MouseClicked
         //agregar estudiantes
@@ -1412,9 +1505,13 @@ public class Loteria extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addcliente2MouseClicked
 
-    private void tfcarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfcarreraActionPerformed
+    private void tf_nombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfcarreraActionPerformed
+    }//GEN-LAST:event_tf_nombre2ActionPerformed
+
+    private void addpoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpoliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addpoliActionPerformed
 
     private void addpoliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addpoliMouseClicked
         //agregar politicos
@@ -1435,91 +1532,63 @@ public class Loteria extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addpoliMouseClicked
 
-    private void tf_nombre3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre3ActionPerformed
+    private void tfnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfnomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombre3ActionPerformed
+    }//GEN-LAST:event_tfnomActionPerformed
 
-    private void tf_nombre4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre4ActionPerformed
+    private void addcliente1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addcliente1MouseClicked
+        try {
+            personas.add(new Empleados(empleo, nombre, edad, ID, IDBoleto, depto, dinero));
+            JOptionPane.showMessageDialog(this, "La persona se agrego exitosamente");
+
+            tf_nombre1.setText("");
+            tfedad1.setText("");
+            tfid1.setText("");
+            tfidboleto1.setText("");
+            ftddinero1.setText("");
+            tfdepto1.setText("");
+            tfempleo.setText("");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos.");
+        }
+    }//GEN-LAST:event_addcliente1MouseClicked
+
+    private void tf_nombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombre4ActionPerformed
+    }//GEN-LAST:event_tf_nombre1ActionPerformed
 
-    private void tfnom1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfnom1ActionPerformed
+    private void addclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addclienteMouseClicked
+
+        try {
+            personas.add(new Personas(nombre, edad, ID, IDBoleto, depto, dinero));
+            JOptionPane.showMessageDialog(this, "La persona se agrego exitosamente");
+
+            tf_nombre.setText("");
+            tfedad.setText("");
+            tfid.setText("");
+            tfidboleto.setText("");
+            ftddinero.setText("");
+            tfdepto.setText("");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos.");
+        }
+    }//GEN-LAST:event_addclienteMouseClicked
+
+    private void tf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfnom1ActionPerformed
+    }//GEN-LAST:event_tf_nombreActionPerformed
 
-    private void tf_nombre5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombre5ActionPerformed
-
-    private void tfcarrera1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfcarrera1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfcarrera1ActionPerformed
-
-    private void mod_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_clientesMouseClicked
-
-        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setDepto(tfdepto3.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setEdad(Integer.parseInt(tfedad3.getText()));
-        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setID(tfid3.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setNombre(tf_nombre3.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setDinero(Integer.parseInt(ftddinero3.getText()));
-        personas.get(Integer.parseInt(tf_posicionempleado.getText())).setIDBoleto(tfidboleto3.getText());
-        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
-    }//GEN-LAST:event_mod_clientesMouseClicked
-
-    private void mod_empleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_empleMouseClicked
-        // Tmodificar empleados
-
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdepto4.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfedad4.getText()));
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfid4.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tf_nombre4.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(ftddinero4.getText()));
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfidboleto4.getText());
-        ((Empleados) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setEmpleo(tfempleo.getText());
-        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
-    }//GEN-LAST:event_mod_empleMouseClicked
-
-    private void mod_politicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_politicoMouseClicked
-        // Modificar politicos
-
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdep1.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfed1.getText()));
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfidd1.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tfnom1.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(tfdin1.getText()));
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfboleto1.getText());
-        ((Politicos) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setPartido("");
-        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
-    }//GEN-LAST:event_mod_politicoMouseClicked
-
-    private void mod_estudiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_estudiMouseClicked
-        // modificar estudiantes
-
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdepto5.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfedad5.getText()));
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfid5.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tf_nombre5.getText());
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(ftddinero5.getText()));
-        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfidboleto5.getText());
-        ((Estudiantes) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setCarrera(tfcarrera1.getText());
-        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
-    }//GEN-LAST:event_mod_estudiMouseClicked
-
-    private void tabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabStateChanged
-
-    }//GEN-LAST:event_tabStateChanged
-
-    private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-    }//GEN-LAST:event_jTabbedPane3StateChanged
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        personas.remove(Integer.parseInt(tf_elim.getText()));
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void jTabbedPane8StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane8StateChanged
-        
-    }//GEN-LAST:event_jTabbedPane8StateChanged
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        boletos.add(evt);
+    }//GEN-LAST:event_jButton2MouseClicked
 
         String password = JOptionPane.showInputDialog("Ingrese la contraseña");
 
@@ -1572,6 +1641,8 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JTextField ftddinero4;
     private javax.swing.JTextField ftddinero5;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1628,6 +1699,8 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1637,6 +1710,7 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1651,7 +1725,6 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane8;
-    private javax.swing.JTabbedPane jTabbedPane9;
     private javax.swing.JButton mod_clientes;
     private javax.swing.JButton mod_emple;
     private javax.swing.JButton mod_estudi;
@@ -1716,4 +1789,5 @@ public class Loteria extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     ArrayList<Personas> personas = new ArrayList();
+    ArrayList boletos = new ArrayList();
 }
