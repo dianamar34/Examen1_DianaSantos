@@ -71,6 +71,11 @@ public class Politicos extends Personas {
         this.dinero = dinero;
     }
 
+    @Override
+    public String toString() {
+        return  nombre + ID + depto +  IDBoleto ;
+    }
+
     
     
 }

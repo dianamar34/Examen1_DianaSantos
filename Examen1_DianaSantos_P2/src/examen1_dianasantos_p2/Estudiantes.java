@@ -72,7 +72,7 @@ public class Estudiantes extends Personas{
 
     @Override
     public String toString() {
-        return "Estudiantes{" + "carrera=" + carrera + '}';
+       return  nombre + ID + depto +  IDBoleto ;
     }
     
     

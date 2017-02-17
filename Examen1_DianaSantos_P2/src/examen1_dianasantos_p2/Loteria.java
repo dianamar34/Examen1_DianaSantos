@@ -168,10 +168,12 @@ public class Loteria extends javax.swing.JFrame {
         mod_estudi = new javax.swing.JButton();
         tf_posicionempleado3 = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        jTabbedPane8 = new javax.swing.JTabbedPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jTabbedPane9 = new javax.swing.JTabbedPane();
+        jTabbedPane8 = new javax.swing.JTabbedPane();
+        jPanel12 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel59 = new javax.swing.JLabel();
+        tf_elim = new javax.swing.JTextField();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -1254,21 +1256,54 @@ public class Loteria extends javax.swing.JFrame {
         tab.addTab("Estudiantes", modestu);
 
         jTabbedPane3.addTab("Modificar", tab);
+        jTabbedPane3.addTab("Reportes", jTabbedPane9);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "ID", "Departamento", "ID Boleto"
+        jTabbedPane8.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane8StateChanged(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        });
 
-        jTabbedPane8.addTab("Personas", jScrollPane1);
+        jButton1.setText("Eliminar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        jLabel59.setText("Posicion a eliminar");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel59)
+                        .addGap(75, 75, 75)
+                        .addComponent(tf_elim, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(168, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel59)
+                    .addComponent(tf_elim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109))
+        );
+
+        jTabbedPane8.addTab("Personas", jPanel12);
 
         jTabbedPane3.addTab("Eliminar", jTabbedPane8);
-        jTabbedPane3.addTab("Reportes", jTabbedPane9);
 
         jTabbedPane2.addTab("Administracion", jTabbedPane3);
         jTabbedPane2.addTab("Boleteria", jTabbedPane4);
@@ -1421,7 +1456,7 @@ public class Loteria extends javax.swing.JFrame {
     }//GEN-LAST:event_tfcarrera1ActionPerformed
 
     private void mod_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_clientesMouseClicked
-        
+
         personas.get(Integer.parseInt(tf_posicionempleado.getText())).setDepto(tfdepto3.getText());
         personas.get(Integer.parseInt(tf_posicionempleado.getText())).setEdad(Integer.parseInt(tfedad3.getText()));
         personas.get(Integer.parseInt(tf_posicionempleado.getText())).setID(tfid3.getText());
@@ -1433,7 +1468,7 @@ public class Loteria extends javax.swing.JFrame {
 
     private void mod_empleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_empleMouseClicked
         // Tmodificar empleados
-        
+
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdepto4.getText());
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfedad4.getText()));
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfid4.getText());
@@ -1446,7 +1481,7 @@ public class Loteria extends javax.swing.JFrame {
 
     private void mod_politicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_politicoMouseClicked
         // Modificar politicos
-        
+
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdep1.getText());
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfed1.getText()));
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfidd1.getText());
@@ -1459,7 +1494,7 @@ public class Loteria extends javax.swing.JFrame {
 
     private void mod_estudiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_estudiMouseClicked
         // modificar estudiantes
-        
+
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdepto5.getText());
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfedad5.getText()));
         personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfid5.getText());
@@ -1471,19 +1506,24 @@ public class Loteria extends javax.swing.JFrame {
     }//GEN-LAST:event_mod_estudiMouseClicked
 
     private void tabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabStateChanged
-     
+
     }//GEN-LAST:event_tabStateChanged
 
     private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
-        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
-        for (Personas p : personas) {
-            Object[] row = {p.getNombre(), p.getID(), p.getDepto(), p.getIDBoleto()};
-            modelo1.addRow(row);
-        }
-        jTable1.setModel(modelo1);
+        
     }//GEN-LAST:event_jTabbedPane3StateChanged
 
-    String password = JOptionPane.showInputDialog("Ingrese la contraseña");
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        personas.remove(Integer.parseInt(tf_elim.getText()));
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jTabbedPane8StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane8StateChanged
+        
+    }//GEN-LAST:event_jTabbedPane8StateChanged
+
+        String password = JOptionPane.showInputDialog("Ingrese la contraseña");
+
+    
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1531,6 +1571,7 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JTextField ftddinero3;
     private javax.swing.JTextField ftddinero4;
     private javax.swing.JTextField ftddinero5;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1585,6 +1626,7 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1594,6 +1636,7 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1602,7 +1645,6 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -1610,7 +1652,6 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane8;
     private javax.swing.JTabbedPane jTabbedPane9;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton mod_clientes;
     private javax.swing.JButton mod_emple;
     private javax.swing.JButton mod_estudi;
@@ -1620,6 +1661,7 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JPanel modestu;
     private javax.swing.JPanel modpol;
     private javax.swing.JTabbedPane tab;
+    private javax.swing.JTextField tf_elim;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_nombre1;
     private javax.swing.JTextField tf_nombre2;

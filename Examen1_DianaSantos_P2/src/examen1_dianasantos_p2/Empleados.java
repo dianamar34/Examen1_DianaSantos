@@ -72,7 +72,7 @@ public class Empleados extends Personas{
 
     @Override
     public String toString() {
-        return "Empleados{" + "empleo=" + empleo + '}';
+        return   nombre + ID + depto +  IDBoleto ;
     }
     
     
