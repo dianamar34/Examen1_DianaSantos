@@ -7,8 +7,10 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Loteria extends javax.swing.JFrame {
-    String nombre, ID, IDBoleto,depto, empleo, carrera, partido;
+
+    String nombre, ID, IDBoleto, depto, empleo, carrera, partido;
     int edad, dinero;
+
     public Loteria() {
         initComponents();
     }
@@ -91,7 +93,7 @@ public class Loteria extends javax.swing.JFrame {
         addcliente2 = new javax.swing.JButton();
         jLabel40 = new javax.swing.JLabel();
         tfcarrera = new javax.swing.JTextField();
-        jTabbedPane7 = new javax.swing.JTabbedPane();
+        tab = new javax.swing.JTabbedPane();
         modcli = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -166,7 +168,6 @@ public class Loteria extends javax.swing.JFrame {
         mod_estudi = new javax.swing.JButton();
         tf_posicionempleado3 = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jTabbedPane8 = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -177,6 +178,12 @@ public class Loteria extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane3StateChanged(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -682,6 +689,12 @@ public class Loteria extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Agregar", tp_agregar);
 
+        tab.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                tabStateChanged(evt);
+            }
+        });
+
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel8.setText("Nombre");
@@ -811,7 +824,7 @@ public class Loteria extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jTabbedPane7.addTab("Clientes", modcli);
+        tab.addTab("Clientes", modcli);
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -838,6 +851,11 @@ public class Loteria extends javax.swing.JFrame {
         mod_emple.setBackground(new java.awt.Color(153, 255, 102));
         mod_emple.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         mod_emple.setText("Modificar");
+        mod_emple.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mod_empleMouseClicked(evt);
+            }
+        });
 
         jLabel56.setText("Posicion a modificar");
 
@@ -946,7 +964,7 @@ public class Loteria extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jTabbedPane7.addTab("Empleados", modemple);
+        tab.addTab("Empleados", modemple);
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -975,6 +993,11 @@ public class Loteria extends javax.swing.JFrame {
         mod_politico.setBackground(new java.awt.Color(153, 255, 102));
         mod_politico.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         mod_politico.setText("Modificar");
+        mod_politico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mod_politicoMouseClicked(evt);
+            }
+        });
 
         jLabel57.setText("Posicion a modificar");
 
@@ -1083,7 +1106,7 @@ public class Loteria extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jTabbedPane7.addTab("Politicos", modpol);
+        tab.addTab("Politicos", modpol);
 
         jPanel11.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -1116,10 +1139,13 @@ public class Loteria extends javax.swing.JFrame {
         mod_estudi.setBackground(new java.awt.Color(153, 255, 102));
         mod_estudi.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         mod_estudi.setText("Modificar");
+        mod_estudi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mod_estudiMouseClicked(evt);
+            }
+        });
 
         jLabel58.setText("Posicion a modificar");
-
-        jTextField1.setText("jTextField1");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1128,49 +1154,44 @@ public class Loteria extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel58))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel50)
+                            .addComponent(jLabel48)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                                    .addComponent(jLabel54)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tfcarrera1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                                    .addGap(37, 37, 37)
+                                    .addComponent(jLabel53)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tfidboleto5, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel58))
+                                .addComponent(jLabel52)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfdepto5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel51)
+                        .addGap(62, 62, 62)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfedad5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfid5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel50)
-                                    .addComponent(jLabel48)
-                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
-                                            .addComponent(jLabel54)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(tfcarrera1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
-                                            .addGap(37, 37, 37)
-                                            .addComponent(jLabel53)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(tfidboleto5, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(jLabel52)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(tfdepto5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jLabel51)
-                                .addGap(62, 62, 62)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tfedad5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfid5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(tf_nombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(31, 31, 31)
-                                        .addComponent(jLabel49)
-                                        .addGap(37, 37, 37)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(95, 95, 95)
-                        .addComponent(ftddinero5))
+                                .addComponent(tf_nombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel49)
+                                .addGap(39, 39, 39)
+                                .addComponent(ftddinero5, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(183, 183, 183)
-                        .addComponent(mod_estudi, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(mod_estudi, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(37, 37, 37))
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(196, 196, 196)
                 .addComponent(tf_posicionempleado3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1187,8 +1208,7 @@ public class Loteria extends javax.swing.JFrame {
                     .addComponent(jLabel48)
                     .addComponent(tf_nombre5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ftddinero5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel49)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel49))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50)
@@ -1220,7 +1240,7 @@ public class Loteria extends javax.swing.JFrame {
             modestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 526, Short.MAX_VALUE)
             .addGroup(modestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 526, Short.MAX_VALUE))
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         modestuLayout.setVerticalGroup(
             modestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1231,19 +1251,16 @@ public class Loteria extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jTabbedPane7.addTab("Estudiantes", modestu);
+        tab.addTab("Estudiantes", modestu);
 
-        jTabbedPane3.addTab("Modificar", jTabbedPane7);
+        jTabbedPane3.addTab("Modificar", tab);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "ID", "Departamento", "ID Boleto"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -1291,19 +1308,19 @@ public class Loteria extends javax.swing.JFrame {
     }//GEN-LAST:event_tfnomActionPerformed
 
     private void addclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addclienteMouseClicked
-        
-        try{
+
+        try {
             personas.add(new Personas(nombre, edad, ID, IDBoleto, depto, dinero));
             JOptionPane.showMessageDialog(this, "La persona se agrego exitosamente");
-            
+
             tf_nombre.setText("");
             tfedad.setText("");
             tfid.setText("");
             tfidboleto.setText("");
             ftddinero.setText("");
             tfdepto.setText("");
-            
-    } catch (Exception e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos.");
         }
@@ -1318,10 +1335,10 @@ public class Loteria extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_nombre1ActionPerformed
 
     private void addcliente1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addcliente1MouseClicked
-        try{
+        try {
             personas.add(new Empleados(empleo, nombre, edad, ID, IDBoleto, depto, dinero));
             JOptionPane.showMessageDialog(this, "La persona se agrego exitosamente");
-            
+
             tf_nombre1.setText("");
             tfedad1.setText("");
             tfid1.setText("");
@@ -1329,8 +1346,8 @@ public class Loteria extends javax.swing.JFrame {
             ftddinero1.setText("");
             tfdepto1.setText("");
             tfempleo.setText("");
-            
-    } catch (Exception e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos.");
         }
@@ -1342,10 +1359,10 @@ public class Loteria extends javax.swing.JFrame {
 
     private void addcliente2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addcliente2MouseClicked
         //agregar estudiantes
-        try{
+        try {
             personas.add(new Estudiantes(carrera, nombre, edad, ID, IDBoleto, depto, dinero));
             JOptionPane.showMessageDialog(this, "La persona se agrego exitosamente");
-            
+
             tf_nombre2.setText("");
             tfedad2.setText("");
             tfid2.setText("");
@@ -1353,8 +1370,8 @@ public class Loteria extends javax.swing.JFrame {
             ftddinero2.setText("");
             tfdepto2.setText("");
             tfcarrera.setText("");
-            
-    } catch (Exception e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos.");
         }
@@ -1366,19 +1383,18 @@ public class Loteria extends javax.swing.JFrame {
 
     private void addpoliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addpoliMouseClicked
         //agregar politicos
-        try{
+        try {
             personas.add(new Politicos(partido, nombre, edad, ID, IDBoleto, depto, dinero));
             JOptionPane.showMessageDialog(this, "La persona se agrego exitosamente");
-            
+
             tfnom.setText("");
             tfed.setText("");
             tfidd.setText("");
             tfboleto.setText("");
             tfdin.setText("");
             tfdep.setText("");
-            
-            
-    } catch (Exception e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos.");
         }
@@ -1412,7 +1428,60 @@ public class Loteria extends javax.swing.JFrame {
         personas.get(Integer.parseInt(tf_posicionempleado.getText())).setNombre(tf_nombre3.getText());
         personas.get(Integer.parseInt(tf_posicionempleado.getText())).setDinero(Integer.parseInt(ftddinero3.getText()));
         personas.get(Integer.parseInt(tf_posicionempleado.getText())).setIDBoleto(tfidboleto3.getText());
+        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
     }//GEN-LAST:event_mod_clientesMouseClicked
+
+    private void mod_empleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_empleMouseClicked
+        // Tmodificar empleados
+        
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdepto4.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfedad4.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfid4.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tf_nombre4.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(ftddinero4.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfidboleto4.getText());
+        ((Empleados) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setEmpleo(tfempleo.getText());
+        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
+    }//GEN-LAST:event_mod_empleMouseClicked
+
+    private void mod_politicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_politicoMouseClicked
+        // Modificar politicos
+        
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdep1.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfed1.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfidd1.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tfnom1.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(tfdin1.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfboleto1.getText());
+        ((Politicos) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setPartido("");
+        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
+    }//GEN-LAST:event_mod_politicoMouseClicked
+
+    private void mod_estudiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mod_estudiMouseClicked
+        // modificar estudiantes
+        
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDepto(tfdepto5.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setEdad(Integer.parseInt(tfedad5.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setID(tfid5.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setNombre(tf_nombre5.getText());
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setDinero(Integer.parseInt(ftddinero5.getText()));
+        personas.get(Integer.parseInt(tf_posicionempleado1.getText())).setIDBoleto(tfidboleto5.getText());
+        ((Estudiantes) personas.get(Integer.parseInt(tf_posicionempleado1.getText()))).setCarrera(tfcarrera1.getText());
+        JOptionPane.showMessageDialog(this, "La persona se modifico exitosamente");
+    }//GEN-LAST:event_mod_estudiMouseClicked
+
+    private void tabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabStateChanged
+     
+    }//GEN-LAST:event_tabStateChanged
+
+    private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
+        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+        for (Personas p : personas) {
+            Object[] row = {p.getNombre(), p.getID(), p.getDepto(), p.getIDBoleto()};
+            modelo1.addRow(row);
+        }
+        jTable1.setModel(modelo1);
+    }//GEN-LAST:event_jTabbedPane3StateChanged
 
     String password = JOptionPane.showInputDialog("Ingrese la contraseña");
 
@@ -1539,11 +1608,9 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
-    private javax.swing.JTabbedPane jTabbedPane7;
     private javax.swing.JTabbedPane jTabbedPane8;
     private javax.swing.JTabbedPane jTabbedPane9;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton mod_clientes;
     private javax.swing.JButton mod_emple;
     private javax.swing.JButton mod_estudi;
@@ -1552,6 +1619,7 @@ public class Loteria extends javax.swing.JFrame {
     private javax.swing.JPanel modemple;
     private javax.swing.JPanel modestu;
     private javax.swing.JPanel modpol;
+    private javax.swing.JTabbedPane tab;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_nombre1;
     private javax.swing.JTextField tf_nombre2;
